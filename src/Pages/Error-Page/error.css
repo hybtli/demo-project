@@ -1,0 +1,38 @@
+.error{
+    width: 520px;
+    height: 650px;
+    margin: 50px auto;
+    margin-top: 50px;
+    padding: 45px 65px;
+    background: white;
+    border-radius: 40px;
+}
+
+.error-404{
+    text-align: center;
+    background: white;
+    margin-top: 35%;
+    font-size: 5em;
+}
+
+.error-404-p{
+    text-align: center;
+    background: white;
+    margin-top: 10px;
+    font-size: 1em;
+}
+.login-page{
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 40px;
+    cursor: pointer;
+    border-style: none;
+    margin-top: 60px;
+    margin: 100px;
+    background: orange;
+}
+
+.login-page:hover{
+    background: orangered;
+}
