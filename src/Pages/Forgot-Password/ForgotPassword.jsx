@@ -17,18 +17,24 @@ export default function ForgotPassword() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post(`${apiURL.url}/api/send-forget-password-mail?email=${inputs.email}`)
-      .then((response) => {
-        const forgetPasswordToken = response.data;
-        console.log(forgetPasswordToken);
-        navigate("/reset-password");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (inputs.email === "admin@delta.smart") {
+      navigate("*");
+    } else {
+      axios
+        .post(
+          `${apiURL.url}/api/send-forget-password-mail?email=${inputs.email}`
+        )
+        .then((response) => {
+          const forgetPasswordToken = response.data;
+          console.log(forgetPasswordToken);
+          navigate("/reset-password");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-    navigate("/reset-password");
+      navigate("/reset-password");
+    }
   };
 
   return (
