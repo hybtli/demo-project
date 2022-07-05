@@ -18,7 +18,7 @@ export default function AccountActivationTokenScreen() {
     event.preventDefault();
 
     axios
-      .get(
+      .post(
         `${apiURL.url}/api/activate-user?activationToken=${inputs.token}&password=${inputs.password}`
       )
       .then((response) => {

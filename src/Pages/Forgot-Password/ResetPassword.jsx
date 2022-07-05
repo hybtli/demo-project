@@ -18,7 +18,7 @@ export default function ResetPassword() {
     event.preventDefault();
 
     axios
-      .get(
+      .post(
         `${apiURL.url}/api/reset-password?forgetPasswordToken=${inputs.token}&password=${inputs.password}`
       )
       .then((response) => {
