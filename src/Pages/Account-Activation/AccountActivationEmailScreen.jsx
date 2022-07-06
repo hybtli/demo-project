@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
@@ -17,17 +18,20 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    axios
-      .post(`${apiURL.url}/api/send-activation-mail?email=${inputs.email}`)
-      .then((response) => {
-        const activationToken = response.data;
-        console.log(activationToken);
-        alert("Activation code is sent");
-        navigate("/account-activation");
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
+    if (inputs.email === "admin@delta.smart") {
+      toast.error("Admin no need to activate account");
+    } else {
+      axios
+        .post(`${apiURL.url}/api/send-activation-mail?email=${inputs.email}`)
+        .then((response) => {
+          alert("Activation code is sent");
+          navigate("/account-activation");
+        })
+        .catch((err) => {
+          const message = err.response.data.message;
+          toast.error(message);
+        });
+    }
   };
 
   return (

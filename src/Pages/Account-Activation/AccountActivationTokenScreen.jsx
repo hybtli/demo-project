@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import apiURL from "../../config.json";
@@ -25,7 +26,8 @@ export default function AccountActivationTokenScreen() {
         navigate("/home");
       })
       .catch((err) => {
-        console.log(err.response);
+        const message = err.response.data.message;
+        toast.error(message);
       });
   };
 

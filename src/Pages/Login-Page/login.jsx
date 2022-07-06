@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
@@ -22,12 +23,13 @@ export default function Login() {
         `${apiURL.url}/api/login?email=${inputs.email}&password=${inputs.password}`
       )
       .then((response) => {
-        const accessToken = response.data.access_token;
-        console.log(accessToken);
+        const message = response.data.message;
+        console.log(message);
         navigate("/home");
       })
       .catch((err) => {
-        console.log(err.response);
+        const message = err.response.data.message;
+        toast.error(message);
       });
   };
 

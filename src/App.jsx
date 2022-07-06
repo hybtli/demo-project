@@ -1,17 +1,20 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login-Page/login";
 import AccountActivationScreen from "./Pages/Account-Activation/AccountActivationEmailScreen";
 import AccountActivation from "./Pages/Account-Activation/AccountActivationTokenScreen";
 import ForgotPassword from "./Pages/Forgot-Password/ForgotPassword";
+import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
 import Error from "./Pages/Error-Page/error";
 import Home from "./Pages/Home-Page/Home";
 import "./app.css";
-import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/login" element={<Login />} />

@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
@@ -18,19 +19,18 @@ export default function ForgotPassword() {
     event.preventDefault();
 
     if (inputs.email === "admin@delta.smart") {
-      navigate("*");
+      toast.error("Admin no need to change password");
     } else {
       axios
         .post(
           `${apiURL.url}/api/send-forget-password-mail?email=${inputs.email}`
         )
         .then((response) => {
-          const forgetPasswordToken = response.data;
-          console.log(forgetPasswordToken);
           navigate("/reset-password");
         })
         .catch((err) => {
-          console.log(err);
+          const message = err.response.data.message;
+          toast.error(message);
         });
 
       navigate("/reset-password");
@@ -54,7 +54,7 @@ export default function ForgotPassword() {
         />
 
         <button className="send-token-button" type="submit">
-          Send Token
+          Send Email
         </button>
 
         <Link className="cancel-link" to="/login">

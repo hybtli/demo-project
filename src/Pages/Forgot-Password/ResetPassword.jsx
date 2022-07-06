@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
@@ -25,7 +26,8 @@ export default function ResetPassword() {
         navigate("/login");
       })
       .catch((err) => {
-        console.log(err);
+        const message = err.response.data.message;
+        toast.error(message);
       });
   };
 
