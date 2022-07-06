@@ -33,7 +33,6 @@ export default function ForgotPassword() {
           toast.error(message);
         });
 
-      navigate("/reset-password");
     }
   };
 
