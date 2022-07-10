@@ -17,6 +17,9 @@ export default function AccountActivationTokenScreen() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (inputs.password !== inputs.confirmPassword) {
+      toast.error("Parol blәt !!!");
+    }
 
     axios
       .post(
@@ -52,17 +55,6 @@ export default function AccountActivationTokenScreen() {
             action="/home"
             onSubmit={handleSubmit}
           >
-            <label className="label">Activation Token:</label>
-            <input
-              type="password"
-              name="token"
-              value={inputs.token || ""}
-              onChange={handleChange}
-              required
-              className="input"
-              placeholder="Activation Token"
-            />
-
             <label className="label">Password:</label>
             <input
               type="password"
@@ -72,6 +64,17 @@ export default function AccountActivationTokenScreen() {
               required
               className="input"
               placeholder="Password"
+            />
+
+            <label className="label">Confirm your new password:</label>
+            <input
+              name="confirmPassword"
+              className="input"
+              type="password"
+              placeholder="Confirm Password"
+              value={inputs.confirmPassword || ""}
+              onChange={handleChange}
+              required
             />
 
             <button className="register-form-button" type="submit">

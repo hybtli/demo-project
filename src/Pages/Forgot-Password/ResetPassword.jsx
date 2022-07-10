@@ -17,6 +17,9 @@ export default function ResetPassword() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (inputs.password !== inputs.confirmPassword) {
+      toast.error("Parol blәt !!!");
+    }
 
     axios
       .post(
@@ -34,17 +37,6 @@ export default function ResetPassword() {
   return (
     <div className="reset-password-container">
       <form className="reset-password-wrapper" onSubmit={handleSubmit}>
-        <label className="reset-password-label">Enter your token:</label>
-        <input
-          name="token"
-          className="forgot-password-token-input"
-          type="password"
-          placeholder="Forgot Password Token"
-          value={inputs.token || ""}
-          onChange={handleChange}
-          required
-        />
-
         <label className="reset-password-label">Enter your new password:</label>
         <input
           name="password"
@@ -52,6 +44,19 @@ export default function ResetPassword() {
           type="password"
           placeholder="Password"
           value={inputs.password || ""}
+          onChange={handleChange}
+          required
+        />
+
+        <label className="reset-password-label">
+          Confirm your new password:
+        </label>
+        <input
+          name="confirmPassword"
+          className="reset-password-input"
+          type="password"
+          placeholder="Confirm Password"
+          value={inputs.confirmPassword || ""}
           onChange={handleChange}
           required
         />
