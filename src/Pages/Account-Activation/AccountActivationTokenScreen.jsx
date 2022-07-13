@@ -18,7 +18,6 @@ export default function AccountActivationTokenScreen() {
   const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
   const lengthRegExp = /.{8,20}/;
 
-  const passwordLength = inputs.password.length();
   const uppercasePassword = uppercaseRegExp.test(inputs.password);
   const lowercasePassword = lowercaseRegExp.test(inputs.password);
   const digitsPassword = digitsRegExp.test(inputs.password);
@@ -50,9 +49,7 @@ export default function AccountActivationTokenScreen() {
         .catch((err) => {
           const message = err.response.data.message;
           if (message === "Password is not acceptable") {
-            if (passwordLength === 0) {
-              errorMessage = "Password is empty";
-            } else if (!uppercasePassword) {
+            if (!uppercasePassword) {
               errorMessage = "At least one uppercase letter";
             } else if (!lowercasePassword) {
               errorMessage = "At least one lowercase";
