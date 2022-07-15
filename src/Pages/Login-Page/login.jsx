@@ -23,12 +23,16 @@ export default function Login() {
         `${apiURL.url}/api/login?email=${inputs.email}&password=${inputs.password}`
       )
       .then((response) => {
-        const message = response.data.message;
-        console.log(message);
         navigate("/home");
       })
       .catch((err) => {
-        const message = err.response.data.message;
+        const message = (
+          <p>
+            EN: {err.response.data.message.en}
+            <br />
+            TR: {err.response.data.message.tr}
+          </p>
+        );
         toast.error(message);
       });
   };
