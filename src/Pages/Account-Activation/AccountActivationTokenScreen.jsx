@@ -1,12 +1,14 @@
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import apiURL from "../../config.json";
 import "./register.css";
 
 export default function AccountActivationTokenScreen() {
   const [inputs, setInputs] = useState({});
   const navigate = useNavigate();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
   const axios = require("axios");
 
   //Definitions for password validation begin here :
@@ -41,7 +43,9 @@ export default function AccountActivationTokenScreen() {
     } else {
       axios
         .post(
-          `${apiURL.url}/api/activate-user?activationToken=${inputs.token}&password=${inputs.password}`
+          `${apiURL.url}/api/activate-user?activationToken=${params.get(
+            "activationToken"
+          )}&password=${inputs.password}`
         )
         .then((response) => {
           navigate("/home");

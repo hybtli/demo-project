@@ -24,8 +24,7 @@ export default function Register() {
       axios
         .post(`${apiURL.url}/api/send-activation-mail?email=${inputs.email}`)
         .then((response) => {
-          alert("Activation code is sent");
-          navigate("/account-activation");
+          alert("Activation link is sent");
         })
         .catch((err) => {
           const message = err.response.data.message;
