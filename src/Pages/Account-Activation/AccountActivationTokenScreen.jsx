@@ -127,6 +127,14 @@ export default function AccountActivationTokenScreen() {
                 </Link>
               </span>
             </p>
+
+            <Link
+              className="language"
+              to="/account-activation-token-screen-tr"
+            >
+              <em>Türkçe ziyaret edin</em>
+            </Link>
+
           </form>
         </div>
       </div>

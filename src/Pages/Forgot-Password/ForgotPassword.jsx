@@ -57,6 +57,14 @@ export default function ForgotPassword() {
         <Link className="cancel-link" to="/login">
           Cancel
         </Link>
+
+        <Link
+          className="language"
+          to="/forgot-password-tr"
+        >
+          <em>Türkçe ziyaret edin</em>
+        </Link>
+
       </form>
     </div>
   );

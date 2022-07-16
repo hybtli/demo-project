@@ -106,6 +106,14 @@ export default function ResetPassword() {
         <Link className="cancel-link" to="/login">
           Cancel
         </Link>
+
+        <Link
+          className="language"
+          to="/reset-password-tr"
+        >
+          <em>Türkçe ziyaret edin</em>
+        </Link>
+
       </form>
     </div>
   );
