@@ -3,7 +3,8 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login-Page/login";
 import LoginTR from "./Pages/Login-Page/login-tr";
-import AccountActivationScreen from "./Pages/Account-Activation/AccountActivationEmailScreen";
+import AccountActivationEmailScreen from "./Pages/Account-Activation/AccountActivationEmailScreen";
+import AccountActivationEmailScreenTR from "./Pages/Account-Activation/AccountActivationEmailScreen-TR";
 import AccountActivation from "./Pages/Account-Activation/AccountActivationTokenScreen";
 import ForgotPassword from "./Pages/Forgot-Password/ForgotPassword";
 import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
@@ -23,9 +24,12 @@ export default function App() {
 
         <Route
           exact
-          path="/account-activation-screen"
-          element={<AccountActivationScreen />}
+          path="/account-activation-email-screen"
+          element={<AccountActivationEmailScreen />}
         />
+
+        <Route exact path="/account-activation-email-screen-tr" element={<AccountActivationEmailScreenTR />} />
+
         <Route
           exact
           path="/account-activation"

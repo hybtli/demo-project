@@ -87,7 +87,7 @@ export default function Login() {
                             <span>
                                 <Link
                                     className="create-account"
-                                    to="/account-activation-screen"
+                                    to="/account-activation-email-screen-tr"
                                 >
                                     Aktif et
                                 </Link>

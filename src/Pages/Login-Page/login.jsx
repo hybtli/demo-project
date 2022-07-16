@@ -26,13 +26,7 @@ export default function Login() {
         navigate("/home");
       })
       .catch((err) => {
-        const message = (
-          <p>
-            EN: {err.response.data.message.en}
-            <br />
-            TR: {err.response.data.message.tr}
-          </p>
-        );
+        const message = err.response.data.message.en;
         toast.error(message);
       });
   };
@@ -93,7 +87,7 @@ export default function Login() {
               <span>
                 <Link
                   className="create-account"
-                  to="/account-activation-screen"
+                  to="/account-activation-email-screen"
                 >
                   Sign Up
                 </Link>
