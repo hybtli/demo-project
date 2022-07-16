@@ -52,7 +52,7 @@ export default function AccountActivationTokenScreen() {
         })
         .catch((err) => {
           const message = err.response.data.message.en;
-          if (message === "Password is not acceptable") {
+          if (message === "Password is not acceptable.") {
             if (!uppercasePassword) {
               errorMessage = "At least one uppercase letter";
             } else if (!lowercasePassword) {
