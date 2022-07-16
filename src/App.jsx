@@ -5,7 +5,8 @@ import Login from "./Pages/Login-Page/login";
 import LoginTR from "./Pages/Login-Page/login-tr";
 import AccountActivationEmailScreen from "./Pages/Account-Activation/AccountActivationEmailScreen";
 import AccountActivationEmailScreenTR from "./Pages/Account-Activation/AccountActivationEmailScreen-TR";
-import AccountActivation from "./Pages/Account-Activation/AccountActivationTokenScreen";
+import AccountActivationTokenScreen from "./Pages/Account-Activation/AccountActivationTokenScreen";
+import AccountActivationTokenScreenTR from "./Pages/Account-Activation/AccountActivationTokenScreen-TR";
 import ForgotPassword from "./Pages/Forgot-Password/ForgotPassword";
 import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
 import Error from "./Pages/Error-Page/error";
@@ -18,9 +19,24 @@ export default function App() {
     <BrowserRouter>
       <ToastContainer />
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/login-tr" element={<LoginTR />} />
+
+        <Route
+          exact
+          path="/"
+          element={<Login />}
+        />
+
+        <Route
+          exact
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          exact
+          path="/login-tr"
+          element={<LoginTR />}
+        />
 
         <Route
           exact
@@ -28,18 +44,32 @@ export default function App() {
           element={<AccountActivationEmailScreen />}
         />
 
-        <Route exact path="/account-activation-email-screen-tr" element={<AccountActivationEmailScreenTR />} />
+        <Route
+          exact
+          path="/account-activation-email-screen-tr"
+          element={<AccountActivationEmailScreenTR />}
+        />
 
         <Route
           exact
-          path="/account-activation"
-          element={<AccountActivation />}
+          path="/account-activation-token-screen"
+          element={<AccountActivationTokenScreen />}
+        />
+
+        <Route
+          exact
+          path="/account-activation-token-screen-tr"
+          element={<AccountActivationTokenScreenTR />}
         />
 
         <Route exact path="/forgot-password" element={<ForgotPassword />} />
+
         <Route exact path="/home" element={<Home />} />
+
         <Route exact path="/reset-password" element={<ResetPassword />} />
+
         <Route path="*" element={<Error />} />
+
       </Routes>
     </BrowserRouter>
   );

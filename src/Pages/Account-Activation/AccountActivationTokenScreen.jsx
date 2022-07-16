@@ -104,7 +104,7 @@ export default function AccountActivationTokenScreen() {
               placeholder="Password"
             />
 
-            <label className="label">Confirm your new password:</label>
+            <label className="label">Confirm your password:</label>
             <input
               name="confirmPassword"
               className="input"
