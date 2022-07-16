@@ -88,7 +88,7 @@ export default function AccountActivationTokenScreen() {
                         <p className="have-account">
                             Hesabın aktif mi?
                             <span>
-                                <Link to="/login" className="login">
+                                <Link to="/login-tr" className="login">
                                     Giriş
                                 </Link>
                             </span>

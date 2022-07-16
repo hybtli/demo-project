@@ -10,6 +10,7 @@ import AccountActivationTokenScreenTR from "./Pages/Account-Activation/AccountAc
 import ForgotPassword from "./Pages/Forgot-Password/ForgotPassword";
 import ForgotPasswordTR from "./Pages/Forgot-Password/ForgotPassword-TR";
 import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
+import ResetPasswordTR from "./Pages/Forgot-Password/ResetPassword-TR";
 import Error from "./Pages/Error-Page/error";
 import Home from "./Pages/Home-Page/Home";
 import "./app.css";
@@ -80,6 +81,12 @@ export default function App() {
           exact
           path="/reset-password"
           element={<ResetPassword />}
+        />
+
+        <Route
+          exact
+          path="/reset-password-tr"
+          element={<ResetPasswordTR />}
         />
 
         <Route exact path="/home" element={<Home />} />
