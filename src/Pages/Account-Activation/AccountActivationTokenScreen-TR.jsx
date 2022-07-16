@@ -93,6 +93,14 @@ export default function AccountActivationTokenScreen() {
                                 </Link>
                             </span>
                         </p>
+
+                        <Link
+                            className="language"
+                            to="/account-activation-token-screen"
+                        >
+                            <em>visit in English</em>
+                        </Link>
+
                     </form>
                 </div>
             </div>

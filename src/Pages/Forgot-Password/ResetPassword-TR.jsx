@@ -72,6 +72,14 @@ export default function ResetPassword() {
                 <Link className="cancel-link" to="/login-tr">
                     İptal et
                 </Link>
+
+                <Link
+                    className="language"
+                    to="/reset-password"
+                >
+                    <em>visit in English</em>
+                </Link>
+
             </form>
         </div>
     );

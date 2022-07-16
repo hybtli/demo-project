@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import React, { useState } from "react";
+import NavDropDown from "react-bootstrap/NavDropdown";
 import { Link, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
 import "./login.css";
@@ -93,6 +94,14 @@ export default function Login() {
                 </Link>
               </span>
             </p>
+
+            <Link
+              className="language"
+              to="/login-tr"
+            >
+              <em>Türkçe ziyaret edin</em>
+            </Link>
+
           </form>
         </div>
       </div>

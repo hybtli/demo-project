@@ -76,6 +76,14 @@ export default function Register() {
                                 </Link>
                             </span>
                         </p>
+
+                        <Link
+                            className="language"
+                            to="/account-activation-email-screen"
+                        >
+                            <em>visit in English</em>
+                        </Link>
+
                     </form>
                 </div>
             </div>

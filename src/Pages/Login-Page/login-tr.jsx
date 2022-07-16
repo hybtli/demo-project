@@ -93,6 +93,14 @@ export default function Login() {
                                 </Link>
                             </span>
                         </p>
+
+                        <Link
+                            className="language"
+                            to="/login"
+                        >
+                            <em>visit in English</em>
+                        </Link>
+
                     </form>
                 </div>
             </div>

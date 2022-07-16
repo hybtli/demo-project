@@ -44,7 +44,7 @@
   width: 50%;
   padding: 0 25px;
   background: white;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .login-form-title {
@@ -118,4 +118,11 @@
 
 .create-account:hover {
   text-decoration: underline;
+}
+
+.language {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  color: chocolate;
 }

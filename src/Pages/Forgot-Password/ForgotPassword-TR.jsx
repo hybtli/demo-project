@@ -57,6 +57,14 @@ export default function ForgotPassword() {
                 <Link className="cancel-link" to="/login-tr">
                     İptal et
                 </Link>
+
+                <Link
+                    className="language"
+                    to="/forgot-password"
+                >
+                    <em>visit in English</em>
+                </Link>
+
             </form>
         </div>
     );
