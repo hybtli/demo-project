@@ -39,7 +39,7 @@ export default function AccountActivationTokenScreen() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (inputs.password !== inputs.confirmPassword) {
-      toast.error("Parol blәt !!!");
+      toast.error("Passwords do not match !");
     } else {
       axios
         .post(
@@ -51,7 +51,7 @@ export default function AccountActivationTokenScreen() {
           navigate("/home");
         })
         .catch((err) => {
-          const message = err.response.data.message;
+          const message = err.response.data.message.en;
           if (message === "Password is not acceptable") {
             if (!uppercasePassword) {
               errorMessage = "At least one uppercase letter";

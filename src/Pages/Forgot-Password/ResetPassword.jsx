@@ -1,12 +1,14 @@
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import apiURL from "../../config.json";
 import "./ResetPassword.css";
 
 export default function ResetPassword() {
   const [inputs, setInputs] = useState({});
   const navigate = useNavigate();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
   const axios = require("axios");
 
   //Definitions for password validation begin here :
@@ -37,17 +39,19 @@ export default function ResetPassword() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputs.password !== inputs.confirmPassword) {
-      toast.error("Parol blәt !!!");
+      toast.error("Passwords do not match !");
     } else {
       axios
         .post(
-          `${apiURL.url}/api/reset-password?forgetPasswordToken=${inputs.token}&password=${inputs.password}`
+          `${apiURL.url}/api/reset-password?forgetPasswordToken=${params.get(
+            "forgetPasswordToken"
+          )}&password=${inputs.password}`
         )
         .then((response) => {
           navigate("/login");
         })
         .catch((err) => {
-          const message = err.response.data.message;
+          const message = err.response.data.message.en;
           if (message === "Password is not acceptable") {
             if (!uppercasePassword) {
               errorMessage = "At least one uppercase letter";

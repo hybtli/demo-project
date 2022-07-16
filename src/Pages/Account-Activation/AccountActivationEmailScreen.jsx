@@ -1,12 +1,11 @@
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import apiURL from "../../config.json";
 import "./register.css";
 
 export default function Register() {
   const [inputs, setInputs] = useState({});
-  const navigate = useNavigate();
   const axios = require("axios");
 
   const handleChange = (event) => {

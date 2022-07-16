@@ -1,12 +1,11 @@
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import apiURL from "../../config.json";
 import "./ForgotPassword.css";
 
 export default function ForgotPassword() {
   const [inputs, setInputs] = useState({});
-  const navigate = useNavigate();
   const axios = require("axios");
 
   const handleChange = (event) => {
@@ -26,13 +25,12 @@ export default function ForgotPassword() {
           `${apiURL.url}/api/send-forget-password-mail?email=${inputs.email}`
         )
         .then((response) => {
-          navigate("/reset-password");
+          alert("Activation link is sent");
         })
         .catch((err) => {
           const message = err.response.data.message;
           toast.error(message);
         });
-
     }
   };
 
