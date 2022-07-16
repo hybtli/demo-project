@@ -8,6 +8,7 @@ import AccountActivationEmailScreenTR from "./Pages/Account-Activation/AccountAc
 import AccountActivationTokenScreen from "./Pages/Account-Activation/AccountActivationTokenScreen";
 import AccountActivationTokenScreenTR from "./Pages/Account-Activation/AccountActivationTokenScreen-TR";
 import ForgotPassword from "./Pages/Forgot-Password/ForgotPassword";
+import ForgotPasswordTR from "./Pages/Forgot-Password/ForgotPassword-TR";
 import ResetPassword from "./Pages/Forgot-Password/ResetPassword";
 import Error from "./Pages/Error-Page/error";
 import Home from "./Pages/Home-Page/Home";
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ToastContainer />
+
       <Routes>
 
         <Route
@@ -62,15 +64,30 @@ export default function App() {
           element={<AccountActivationTokenScreenTR />}
         />
 
-        <Route exact path="/forgot-password" element={<ForgotPassword />} />
+        <Route
+          exact
+          path="/forgot-password"
+          element={<ForgotPassword />}
+        />
+
+        <Route
+          exact
+          path="/forgot-password-tr"
+          element={<ForgotPasswordTR />}
+        />
+
+        <Route
+          exact
+          path="/reset-password"
+          element={<ResetPassword />}
+        />
 
         <Route exact path="/home" element={<Home />} />
-
-        <Route exact path="/reset-password" element={<ResetPassword />} />
 
         <Route path="*" element={<Error />} />
 
       </Routes>
+
     </BrowserRouter>
   );
 }

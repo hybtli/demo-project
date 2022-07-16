@@ -28,7 +28,7 @@ export default function ForgotPassword() {
           alert("Activation link is sent");
         })
         .catch((err) => {
-          const message = err.response.data.message;
+          const message = err.response.data.message.en;
           toast.error(message);
         });
     }

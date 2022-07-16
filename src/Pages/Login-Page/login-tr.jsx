@@ -74,7 +74,7 @@ export default function Login() {
                             placeholder="Şifre"
                         />
 
-                        <Link className="forgot-password" to="/forgot-password">
+                        <Link className="forgot-password" to="/forgot-password-tr">
                             Parolanızı mı unuttunuz?
                         </Link>
 
