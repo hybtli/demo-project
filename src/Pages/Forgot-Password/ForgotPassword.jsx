@@ -25,7 +25,7 @@ export default function ForgotPassword() {
           `${apiURL.url}/api/send-forget-password-mail?email=${inputs.email}`
         )
         .then((response) => {
-          alert("Activation link is sent");
+          toast.success(response.data.message.en);
         })
         .catch((err) => {
           const message = err.response.data.message.en;

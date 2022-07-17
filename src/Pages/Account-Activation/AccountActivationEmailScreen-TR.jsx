@@ -23,7 +23,7 @@ export default function Register() {
             axios
                 .post(`${apiURL.url}/api/send-activation-mail?email=${inputs.email}`)
                 .then((response) => {
-                    alert("Aktivasyon linki gönderildi");
+                    toast.success(response.data.message.tr)
                 })
                 .catch((err) => {
                     const message = err.response.data.message.tr;
