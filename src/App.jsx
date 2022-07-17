@@ -55,13 +55,13 @@ export default function App() {
 
         <Route
           exact
-          path="/account-activation-token-screen"
+          path="/account-activation"
           element={<AccountActivationTokenScreen />}
         />
 
         <Route
           exact
-          path="/account-activation-token-screen-tr"
+          path="/account-activation-tr"
           element={<AccountActivationTokenScreenTR />}
         />
 

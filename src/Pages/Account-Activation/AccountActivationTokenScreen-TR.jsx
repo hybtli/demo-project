@@ -96,7 +96,7 @@ export default function AccountActivationTokenScreen() {
 
                         <Link
                             className="language"
-                            to="/account-activation-token-screen"
+                            to="/account-activation"
                         >
                             <em>visit in English</em>
                         </Link>
