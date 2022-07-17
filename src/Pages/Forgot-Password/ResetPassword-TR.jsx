@@ -82,7 +82,7 @@ export default function ResetPassword() {
                     className="language"
                     onClick={handleClickLanguage}
                 >
-                    <em>Türkçe ziyaret edin</em>
+                    <em>visit in English</em>
                 </a>
 
             </form>

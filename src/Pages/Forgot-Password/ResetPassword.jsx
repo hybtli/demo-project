@@ -52,22 +52,7 @@ export default function ResetPassword() {
         })
         .catch((err) => {
           const message = err.response.data.message.en;
-          if (message === "Password is not acceptable.") {
-            if (!uppercasePassword) {
-              errorMessage = "At least one uppercase letter";
-            } else if (!lowercasePassword) {
-              errorMessage = "At least one lowercase";
-            } else if (!digitsPassword) {
-              errorMessage = "At least one digit";
-            } else if (!specialCharPassword) {
-              errorMessage = "At least one special characters";
-            } else if (!lengthPassword) {
-              errorMessage = "At least 8, at most 20 characters";
-            }
-            toast.error(errorMessage);
-          } else {
-            toast.error(message);
-          }
+          toast.error(message);
         });
     }
   };

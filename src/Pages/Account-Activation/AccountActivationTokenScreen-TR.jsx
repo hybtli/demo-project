@@ -38,6 +38,11 @@ export default function AccountActivationTokenScreen() {
         }
     };
 
+    const handleClickLanguage = (event) => {
+        event.preventDefault();
+        navigate(`/account-activation?activationToken=${params.get("activationToken")}`);
+    };
+
     return (
         <div className="register-container">
             <div className="register-form">
@@ -94,12 +99,12 @@ export default function AccountActivationTokenScreen() {
                             </span>
                         </p>
 
-                        <Link
+                        <a
                             className="language"
-                            to="/account-activation"
+                            onClick={handleClickLanguage}
                         >
                             <em>visit in English</em>
-                        </Link>
+                        </a>
 
                     </form>
                 </div>
