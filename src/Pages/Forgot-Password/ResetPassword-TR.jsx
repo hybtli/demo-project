@@ -38,6 +38,11 @@ export default function ResetPassword() {
         }
     };
 
+    const handleClickLanguage = (event) => {
+        event.preventDefault();
+        navigate(`/reset-password?forgetPasswordToken=${params.get("forgetPasswordToken")}`);
+    }
+
     return (
         <div className="reset-password-container">
             <form className="reset-password-wrapper" onSubmit={handleSubmit}>
@@ -73,12 +78,12 @@ export default function ResetPassword() {
                     İptal et
                 </Link>
 
-                <Link
+                <a
                     className="language"
-                    to="/reset-password"
+                    onClick={handleClickLanguage}
                 >
-                    <em>visit in English</em>
-                </Link>
+                    <em>Türkçe ziyaret edin</em>
+                </a>
 
             </form>
         </div>

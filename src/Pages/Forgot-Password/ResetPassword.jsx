@@ -112,12 +112,12 @@ export default function ResetPassword() {
           Cancel
         </Link>
 
-        <Link
+        <a
           className="language"
           onClick={handleClickLanguage}
         >
           <em>Türkçe ziyaret edin</em>
-        </Link>
+        </a>
 
       </form>
     </div>
