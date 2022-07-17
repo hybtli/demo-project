@@ -11,25 +11,6 @@ export default function ResetPassword() {
   const params = new URLSearchParams(location.search);
   const axios = require("axios");
 
-  //Definitions for password validation begin here :
-
-  // RegEx definitions :
-  const uppercaseRegExp = /(?=.*?[A-Z])/;
-  const lowercaseRegExp = /(?=.*?[a-z])/;
-  const digitsRegExp = /(?=.*?[0-9])/;
-  const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
-  const lengthRegExp = /.{8,20}/;
-
-  const uppercasePassword = uppercaseRegExp.test(inputs.password);
-  const lowercasePassword = lowercaseRegExp.test(inputs.password);
-  const digitsPassword = digitsRegExp.test(inputs.password);
-  const specialCharPassword = specialCharRegExp.test(inputs.password);
-  const lengthPassword = lengthRegExp.test(inputs.password);
-
-  let errorMessage = "";
-
-  //RegEx definitions for password validation finish here :
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
