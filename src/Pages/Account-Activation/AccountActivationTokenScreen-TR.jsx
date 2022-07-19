@@ -9,6 +9,7 @@ export default function AccountActivationTokenScreen() {
     const navigate = useNavigate();
     const location = useLocation();
     const params = new URLSearchParams(location.search);
+    const activationToken = params.get("activationToken");
     const axios = require("axios");
 
     const handleChange = (event) => {
@@ -24,9 +25,7 @@ export default function AccountActivationTokenScreen() {
         } else {
             axios
                 .post(
-                    `${apiURL.url}/api/activate-user?activationToken=${params.get(
-                        "activationToken"
-                    )}&password=${inputs.password}`
+                    `${apiURL.url}/api/activate-user?activationToken=${activationToken}&password=${inputs.password}`
                 )
                 .then((response) => {
                     navigate("/home");
@@ -36,11 +35,6 @@ export default function AccountActivationTokenScreen() {
                     toast.error(message);
                 });
         }
-    };
-
-    const handleClickLanguage = (event) => {
-        event.preventDefault();
-        navigate(`/account-activation?activationToken=${params.get("activationToken")}`);
     };
 
     return (
@@ -99,12 +93,12 @@ export default function AccountActivationTokenScreen() {
                             </span>
                         </p>
 
-                        <a
+                        <Link
                             className="language"
-                            onClick={handleClickLanguage}
+                            to={`/account-activation?activationToken=${activationToken}`}
                         >
                             <em>visit in English</em>
-                        </a>
+                        </Link>
 
                     </form>
                 </div>

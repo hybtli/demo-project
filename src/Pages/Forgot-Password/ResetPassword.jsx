@@ -9,6 +9,7 @@ export default function ResetPassword() {
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
+  const forgetPasswordToken = params.get("forgetPasswordToken");
   const axios = require("axios");
 
   const handleChange = (event) => {
@@ -24,9 +25,7 @@ export default function ResetPassword() {
     } else {
       axios
         .post(
-          `${apiURL.url}/api/reset-password?forgetPasswordToken=${params.get(
-            "forgetPasswordToken"
-          )}&password=${inputs.password}`
+          `${apiURL.url}/api/reset-password?forgetPasswordToken=${forgetPasswordToken}&password=${inputs.password}`
         )
         .then((response) => {
           navigate("/login");
@@ -37,11 +36,6 @@ export default function ResetPassword() {
         });
     }
   };
-
-  const handleClickLanguage = (event) => {
-    event.preventDefault();
-    navigate(`/reset-password-tr?forgetPasswordToken=${params.get("forgetPasswordToken")}`);
-  }
 
   return (
     <div className="reset-password-container">
@@ -78,12 +72,11 @@ export default function ResetPassword() {
           Cancel
         </Link>
 
-        <a
+        <Link
           className="language"
-          onClick={handleClickLanguage}
-        >
+          to={`/reset-password-tr?forgetPasswordToken=${forgetPasswordToken}`}>
           <em>Türkçe ziyaret edin</em>
-        </a>
+        </Link>
 
       </form>
     </div>
